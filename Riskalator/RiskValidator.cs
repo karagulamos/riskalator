@@ -19,9 +19,9 @@ namespace Riskalator
 
             _indicatorValues = new Dictionary<string, string>
             {
-                {nameof(Indicators.Safety), indicators.Safety},
-                {nameof(Indicators.Warning), indicators.Warning},
-                {nameof(Indicators.Escalation), indicators.Escalation}
+                {nameof(Indicators.Safety), indicators.Safety.ToLower()},
+                {nameof(Indicators.Warning), indicators.Warning.ToLower()},
+                {nameof(Indicators.Escalation), indicators.Escalation.ToLower()}
             };
         }
 
@@ -46,7 +46,7 @@ namespace Riskalator
         public static RiskValidator Create(Indicators indicators,  string selection)
         {
             var pattern = RiskPatternFactory.CreatePattern(selection);
-            return new RiskValidator(indicators, pattern, selection);
+            return new RiskValidator(indicators, pattern, selection.ToLower());
         }
 
         private static readonly Dictionary<string, RiskIndicatorType> IndicatorTypes =
