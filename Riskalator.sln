@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riskalator", "Riskalator\Riskalator.csproj", "{48FD04CA-9F1D-4A7D-AB4F-ED5D23C9D2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Riskalator.Tests", "Riskalator.Tests\Riskalator.Tests.csproj", "{0743A926-0DC3-4B09-80AE-E24BEBC0CE0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48FD04CA-9F1D-4A7D-AB4F-ED5D23C9D2A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FD04CA-9F1D-4A7D-AB4F-ED5D23C9D2A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FD04CA-9F1D-4A7D-AB4F-ED5D23C9D2A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FD04CA-9F1D-4A7D-AB4F-ED5D23C9D2A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0743A926-0DC3-4B09-80AE-E24BEBC0CE0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0743A926-0DC3-4B09-80AE-E24BEBC0CE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0743A926-0DC3-4B09-80AE-E24BEBC0CE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0743A926-0DC3-4B09-80AE-E24BEBC0CE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
