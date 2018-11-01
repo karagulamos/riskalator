@@ -8,7 +8,7 @@ namespace Riskalator
     {
         public static RiskValueToken[] ParseTokens(string indicatorValue, string pattern)
         {
-            var matches = Regex.Matches(indicatorValue, pattern, RegexOptions.ECMAScript | RegexOptions.IgnoreCase);
+            var matches = Regex.Matches(indicatorValue, pattern, RegexOptions.IgnoreCase);
 
             if (matches.Count == 0 || matches[0].Groups.Count == 1)
                 return new RiskValueToken[0];

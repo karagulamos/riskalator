@@ -15,7 +15,7 @@ namespace Riskalator
         {
             _pattern = pattern.GetPattern();
 
-            _selection = selection;
+            _selection = selection.ToLower();
 
             _indicatorValues = new Dictionary<string, string>
             {
@@ -46,7 +46,7 @@ namespace Riskalator
         public static RiskValidator Create(Indicators indicators,  string selection)
         {
             var pattern = RiskPatternFactory.CreatePattern(selection);
-            return new RiskValidator(indicators, pattern, selection.ToLower());
+            return new RiskValidator(indicators, pattern, selection);
         }
 
         private static readonly Dictionary<string, RiskIndicatorType> IndicatorTypes =
