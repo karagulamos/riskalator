@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Riskalator.Models;
+using System;
 using System.Text.RegularExpressions;
-using Riskalator.Models;
 
 namespace Riskalator
 {
@@ -8,7 +8,7 @@ namespace Riskalator
     {
         public static RiskValueToken[] ParseTokens(string indicatorValue, string pattern)
         {
-            var matches = Regex.Matches(indicatorValue, pattern, RegexOptions.ECMAScript);
+            var matches = Regex.Matches(indicatorValue, pattern, RegexOptions.ECMAScript | RegexOptions.IgnoreCase);
 
             if (matches.Count == 0 || matches[0].Groups.Count == 1)
                 return new RiskValueToken[0];
