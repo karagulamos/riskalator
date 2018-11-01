@@ -11,7 +11,7 @@ namespace Riskalator
 
         private readonly Dictionary<string, string> _indicatorValues;
 
-        protected RiskValidator(Indicators indicators, IRiskPattern pattern, string selection)
+        protected RiskValidator(RiskIndicators indicators, IRiskPattern pattern, string selection)
         {
             _pattern = pattern.GetPattern();
 
@@ -19,9 +19,9 @@ namespace Riskalator
 
             _indicatorValues = new Dictionary<string, string>
             {
-                {nameof(Indicators.Safety), indicators.Safety.ToLower()},
-                {nameof(Indicators.Warning), indicators.Warning.ToLower()},
-                {nameof(Indicators.Escalation), indicators.Escalation.ToLower()}
+                {nameof(RiskIndicators.Safety), indicators.Safety.ToLower()},
+                {nameof(RiskIndicators.Warning), indicators.Warning.ToLower()},
+                {nameof(RiskIndicators.Escalation), indicators.Escalation.ToLower()}
             };
         }
 
@@ -43,7 +43,7 @@ namespace Riskalator
             return RiskIndicatorType.Escalation;
         }
 
-        public static RiskValidator Create(Indicators indicators,  string selection)
+        public static RiskValidator Create(RiskIndicators indicators,  string selection)
         {
             var pattern = RiskPatternFactory.CreatePattern(selection);
             return new RiskValidator(indicators, pattern, selection);
@@ -52,9 +52,9 @@ namespace Riskalator
         private static readonly Dictionary<string, RiskIndicatorType> IndicatorTypes =
         new Dictionary<string, RiskIndicatorType>
         {
-            {nameof(Indicators.Safety), RiskIndicatorType.Safety},
-            {nameof(Indicators.Warning), RiskIndicatorType.Warning},
-            {nameof(Indicators.Escalation), RiskIndicatorType.Escalation}
+            {nameof(RiskIndicators.Safety), RiskIndicatorType.Safety},
+            {nameof(RiskIndicators.Warning), RiskIndicatorType.Warning},
+            {nameof(RiskIndicators.Escalation), RiskIndicatorType.Escalation}
         };
     }
 }

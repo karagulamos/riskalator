@@ -1,6 +1,6 @@
 ﻿namespace Riskalator.Models
 {
-    public class Indicators
+    public class RiskIndicators
     {
         public string Safety { get; set; }
         public string Warning { get; set; }

@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Indicators.cs" />
+    <Compile Include="Models\RiskIndicators.cs" />
     <Compile Include="Models\RiskIndicatorType.cs" />
     <Compile Include="Models\RiskRuleType.cs" />
     <Compile Include="Models\RiskValueToken.cs" />

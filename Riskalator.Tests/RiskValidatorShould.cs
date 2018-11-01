@@ -6,20 +6,20 @@ namespace Riskalator.Tests
     [TestClass]
     public class RiskValidatorShould
     {
-        private Indicators _valueIndicators;
-        private Indicators _textIndicators;
+        private RiskIndicators _valueRiskIndicators;
+        private RiskIndicators _textRiskIndicators;
 
         [TestInitialize]
         public void Setup()
         {
-            _valueIndicators = new Indicators
+            _valueRiskIndicators = new RiskIndicators
             {
                 Safety = "<(300,000)",
                 Warning = ">(300,000) to (323,000)",
                 Escalation = ">(323,000)"
             };
 
-            _textIndicators = new Indicators
+            _textRiskIndicators = new RiskIndicators
             {
                 Safety = "Above Peer",
                 Warning = "Peer",
@@ -32,7 +32,7 @@ namespace Riskalator.Tests
         {
             const string selection = "50000";
 
-            var validator = RiskValidator.Create(_valueIndicators, selection);
+            var validator = RiskValidator.Create(_valueRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -44,13 +44,13 @@ namespace Riskalator.Tests
         {
             var selection = "300001";
             
-            var validator = RiskValidator.Create(_valueIndicators, selection);
+            var validator = RiskValidator.Create(_valueRiskIndicators, selection);
 
             var result1 = validator.Validate();
 
             selection = "323000";
 
-            validator = RiskValidator.Create(_valueIndicators, selection);
+            validator = RiskValidator.Create(_valueRiskIndicators, selection);
 
             var result2 = validator.Validate();
 
@@ -63,7 +63,7 @@ namespace Riskalator.Tests
         {
             const string selection = "323,001";
             
-            var validator = RiskValidator.Create(_valueIndicators, selection);
+            var validator = RiskValidator.Create(_valueRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -75,7 +75,7 @@ namespace Riskalator.Tests
         {
             const string selection = "300,000";
             
-            var validator = RiskValidator.Create(_valueIndicators, selection);
+            var validator = RiskValidator.Create(_valueRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -87,7 +87,7 @@ namespace Riskalator.Tests
         {
             const string selection = "Above Peer";
             
-            var validator = RiskValidator.Create(_textIndicators, selection);
+            var validator = RiskValidator.Create(_textRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -99,7 +99,7 @@ namespace Riskalator.Tests
         {
             const string selection = "Peer";
             
-            var validator = RiskValidator.Create(_textIndicators, selection);
+            var validator = RiskValidator.Create(_textRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -111,7 +111,7 @@ namespace Riskalator.Tests
         {
             const string selection = "Below Peer";
             
-            var validator = RiskValidator.Create(_textIndicators, selection);
+            var validator = RiskValidator.Create(_textRiskIndicators, selection);
 
             var result = validator.Validate();
 
@@ -124,7 +124,7 @@ namespace Riskalator.Tests
         {
             const string selection = "Random Text 101";
             
-            var validator = RiskValidator.Create(_textIndicators, selection);
+            var validator = RiskValidator.Create(_textRiskIndicators, selection);
 
             var result = validator.Validate();
 
