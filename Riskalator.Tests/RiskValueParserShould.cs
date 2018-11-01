@@ -6,7 +6,7 @@ namespace Riskalator.Tests
     public class RiskValueParserShould
     {
         [TestMethod]
-        public void Return_ListWithOneItem_For_SingleValueIndicator()
+        public void Return_ListWithOneItem_For_SingleValueMatch()
         {
             var pattern = RiskPatternFactory.CreatePattern("44444");
 
@@ -22,7 +22,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_ListWithTwoItems_For_RangeValueIndicator()
+        public void Return_ListWithTwoItems_For_RangeValueMatch()
         {
             var pattern = RiskPatternFactory.CreatePattern("300%");
 
@@ -38,9 +38,9 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_ListWithZeroItems_For_DefaultTextIndicator()
+        public void Return_ListWithZeroItems_For_DefaultTextMatch()
         {
-            var pattern = RiskPatternFactory.CreatePattern("Not a single or range value");
+            var pattern = RiskPatternFactory.CreatePattern("Default Alphabetic Text");
 
             var valueTokens1 = RiskValueParser.ParseTokens("4000", pattern.GetPattern());
             var valueTokens2 = RiskValueParser.ParseTokens("40000 - 50000", pattern.GetPattern());

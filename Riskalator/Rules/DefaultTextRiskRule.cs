@@ -9,7 +9,7 @@
             _indicatorValue = indicatorValue;
         }
 
-        public bool IsValid(string selection)
+        public bool IsValidFor(string selection)
         {
             return _indicatorValue == selection;
         }

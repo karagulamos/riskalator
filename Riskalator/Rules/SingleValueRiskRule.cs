@@ -1,5 +1,5 @@
-﻿using System;
-using Riskalator.Models;
+﻿using Riskalator.Models;
+using System;
 
 namespace Riskalator.Rules
 {
@@ -12,7 +12,7 @@ namespace Riskalator.Rules
             _token = token;
         }
 
-        public bool IsValid(string selection)
+        public bool IsValidFor(string selection)
         {
             return IsValid(Convert.ToDecimal(selection), _token.Operation, _token.AcceptableValue);
         }

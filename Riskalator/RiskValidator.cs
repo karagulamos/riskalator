@@ -34,7 +34,7 @@ namespace Riskalator
                 var tokens = RiskValueParser.ParseTokens(indicatorValue, _pattern);
                 var rule = RiskRuleFactory.CreateRule(tokens, indicatorValue);
 
-                if (rule.IsValid(_selection))
+                if (rule.IsValidFor(_selection))
                 {
                     return IndicatorTypes[indicatorType];
                 }

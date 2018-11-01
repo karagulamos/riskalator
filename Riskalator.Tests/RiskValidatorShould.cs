@@ -28,7 +28,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Safety_When_ValueSelectionMatchesSafetyIndicator()
+        public void Return_Safety_When_ValueSelectionMatchesSafetyCondition()
         {
             const string selection = "50000";
 
@@ -40,7 +40,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Warning_When_ValueSelectionMatchesWarningIndicator()
+        public void Return_Warning_When_ValueSelectionMatchesWarningCondition()
         {
             var selection = "300001";
             
@@ -59,7 +59,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Escalation_When_ValueSelectionMatchesEscalationIndicator()
+        public void Return_Escalation_When_ValueSelectionMatchesEscalationCondition()
         {
             const string selection = "323,001";
             
@@ -71,7 +71,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Escalation_When_ValueSelectionMatchesNoIndicator()
+        public void Return_Escalation_When_ValueSelectionMatchesNoCondition()
         {
             const string selection = "300,000";
             
@@ -83,7 +83,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Safety_When_TextSelectionMatchesSafetyIndicator()
+        public void Return_Safety_When_TextSelectionMatchesSafetyCondition()
         {
             const string selection = "Above Peer";
             
@@ -95,7 +95,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Warning_When_TextSelectionMatchesWarningIndicator()
+        public void Return_Warning_When_TextSelectionMatchesWarningCondition()
         {
             const string selection = "Peer";
             
@@ -107,7 +107,7 @@ namespace Riskalator.Tests
         }
 
         [TestMethod]
-        public void Return_Escalation_When_TextSelectionMatchesEscalationIndicator()
+        public void Return_Escalation_When_TextSelectionMatchesEscalationCondition()
         {
             const string selection = "Below Peer";
             
@@ -120,7 +120,7 @@ namespace Riskalator.Tests
 
 
         [TestMethod]
-        public void Return_Escalation_When_TextSelectionMatchesNoIndicator()
+        public void Return_Escalation_When_TextSelectionMatchesNoCondition()
         {
             const string selection = "Random Text 101";
             

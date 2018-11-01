@@ -2,6 +2,6 @@
 {
     public interface IRiskRule
     {
-        bool IsValid(string selection);
+        bool IsValidFor(string selection);
     }
 }
