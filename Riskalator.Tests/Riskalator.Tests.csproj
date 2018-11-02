@@ -50,7 +50,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="RiskValidatorShould.cs" />
+    <Compile Include="RiskValidatorForTextInputShould.cs" />
+    <Compile Include="RiskValidatorForValueInputShould.cs" />
     <Compile Include="RiskValueParserShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
